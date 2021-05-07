@@ -29,27 +29,8 @@ $("#recipeName1").text(response.meals[0].title)
 $("#recipeName2").text(response.meals[1].title)
 $("#recipeName3").text(response.meals[2].title)
 
-//finds the ingredients for each recipe
 
-
-const settings2 = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + id1 + "/ingredientWidget.json",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
-		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-	}
-};
-
-//list ingredients
-$.ajax(settings2).done(function (response2) {
-	console.log("ingredients", response2);
-});
-
-
-//get recipe instructions
+//get recipe instructions and ingredients
 const settings3 = {
 	"async": true,
 	"crossDomain": true,
@@ -63,7 +44,7 @@ const settings3 = {
 
 //displays instructions
 $.ajax(settings3).done(function (response3) {
-	console.log("instructions", response3);
+	console.log("instructions/ingredients", response3);
 
 
     for (let i = 0; i < response3[0].analyzedInstructions[0].steps.length; i++) {
