@@ -46,7 +46,11 @@ const settings3 = {
 $.ajax(settings3).done(function (response3) {
 	console.log("instructions/ingredients", response3);
 
+$("#foodImage1").attr("src", response3[0].image)
+$("#foodImage2").attr("src", response3[1].image)
+$("#foodImage3").attr("src", response3[2].image)
 
+    //displays instruction steps
     for (let i = 0; i < response3[0].analyzedInstructions[0].steps.length; i++) {
         
         $("#instructions1").append(response3[0].analyzedInstructions[0].steps[i].step + "<br>")
@@ -64,6 +68,32 @@ $.ajax(settings3).done(function (response3) {
         $("#instructions3").append(response3[2].analyzedInstructions[0].steps[i].step + "<br>")
         
     }
+    //lists each ingredient
+    for (let i = 0; i < response3[0].extendedIngredients.length; i++) {
+        var img = document.createElement("img")
+        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[0].extendedIngredients[i].image
+        document.getElementById("ingredients1").appendChild(img)
+    }
+   
+    for (let i = 0; i < response3[1].extendedIngredients.length; i++) {
+        var img = document.createElement("img")
+        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[1].extendedIngredients[i].image
+        document.getElementById("ingredients2").appendChild(img)
+    }
+
+    for (let i = 0; i < response3[2].extendedIngredients.length; i++) {
+        var img = document.createElement("img")
+        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[2].extendedIngredients[i].image
+        document.getElementById("ingredients3").appendChild(img)
+    }
+
+    $("#readyInMinutes1").text(response.meals[0].readyInMinutes)
+    $("#readyInMinutes2").text(response.meals[1].readyInMinutes)
+    $("#readyInMinutes3").text(response.meals[2].readyInMinutes)
+    $("#servings1").text(response.meals[0].servings)
+    $("#servings2").text(response.meals[1].servings)
+    $("#servings3").text(response.meals[2].servings)
+
 });
 
 //recipe nutrition - ignore
