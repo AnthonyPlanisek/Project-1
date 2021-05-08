@@ -123,6 +123,8 @@ $.ajax(settings4).done(function (response4) {
 
 });
 
+var currentDay = (moment().format("dddd, MMMM Do YYYY"))
+$("#day").text(currentDay)
 console.log("days in month", moment("2021-06", "YYYY-MM").daysInMonth())
 console.log("day of the month", moment().date())
 console.log("current date", moment().format("dddd, MMMM Do YYYY, h:mm:ss a"))
