@@ -151,7 +151,6 @@ $("#save").click(function data(){
 
 
 
-/*$(document).ready(function(){
+$(document).ready(function(){
     $('.collapsible').collapsible();
   });
-*/
