@@ -4,25 +4,46 @@
 // exclude=shellfish
 
 var mealFormEl = $('#meal-form') 
-// var calorieInput = $('#calorie-entry')
-// var dietInput = $('#diet-input')
-// var exludeInput = $('#exlude-entry')
+var calorieInput = $('#calorie-entry').value;
+var dietInput = $('#diet-input').value;
+var excludeInput = $('#exclude-entry').value;
+
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=${calorieInput}&diet=${dietInput}&exclude=${excludeInput}`,
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
+		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+	}
+};
 
 $(".btn").on("click", function handleMealFormSubmit(event) {
     event.preventDefault()
 
     var calorieInput = $('#calorie-entry').value;
     var dietInput = $('#diet-input').value;
-    var exludeInput = $('#exlude-entry').value;
+    var excludeInput = $('#exclude-entry').value;
 
-    var queryString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=day&targetCalories" + calorieInput + "&diet" + dietInput + "&exclude" + exludeInput
+    var queryString = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=${calorieInput}&diet=${dietInput}&exclude=${excludeInput}`;
 
     location.assign(queryString);
     console.log("3 inputs", queryString );
 });
 
 function searchAPI(calories, diet, exclude) {
-    var locQueryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&"
+    var locQueryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&&targetCalories=&diet=&exclude="
+    locQueryUrl = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=${calories}&diet=${diet}&exclude=${exclude}`
+
+    fetch(locQueryUrl)
+        .then(function (response) {
+            console.log("w/o json", response)
+            return response.json();
+           
+        });
+        console.log("json", response.json());
+
 }
 
 // mealFormEl.addEventListener('submit', handleMealFormSubmit);
