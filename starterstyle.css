@@ -1,4 +1,6 @@
 body {
+    font-family: 'Tangerine', serif;
+    font-size: 27px;
     background: url("assets/food2.jpg");
     background-repeat: no-repeat;
     background-size:cover;
@@ -7,7 +9,7 @@ body {
 }
 
 #div_container {
-    opacity: 0.8;
+    opacity: 0.9;
     background-color: white;
     width: 300px;
     border: 15px solid #77b55a;
@@ -18,6 +20,15 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.header-text {
+    text-align: center;
+}
+
+#search-form {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
 
 #calorie-entry {
     padding: 15px;
@@ -25,12 +36,6 @@ body {
     margin: 0 0 10px 0;
 }
 
-#diet-input{
-    padding: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
-
-}
 
 #exclude-entry{
     padding: 15px;
@@ -38,6 +43,15 @@ body {
     margin: 0 0 10px 0;
 
 }
+
+.custom-select {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+  }
+
+
+
 .btn {
     box-shadow: 0px 10px 14px -7px #3e7327;
 	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
