@@ -118,3 +118,9 @@ $.ajax(settings4).done(function (response4) {
 
 });
 
+
+
+
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+  });

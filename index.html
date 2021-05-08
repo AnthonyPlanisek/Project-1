@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,19 +24,16 @@
           <div class="minutes" id="readyInMinutes1"></div>
           <div class="servings" id="servings1"></div>
           <p id="instructions1"></p>
-          
-
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Ingredients
-            </button>
-            <div id="ingredients1" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              
-            </div>
+          <div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header"><i class="material-icons"></i>Ingredients</div>
+                <div class="collapsible-body" id="ingredients1"></div>
+              </li>
+            </ul>
           </div>
-        </div>
-
-    </div>
+          </div>
+          </div>
     <div class="media-object box">
       <div class="media-object-section">
         <img id="foodImage2" class="image" src= "">
@@ -46,14 +44,13 @@
           <div class="servings" id="servings2"></div>
         <p id="instructions2"></p>
         
-
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Ingredients
-            </button>
-            <div id="ingredients2" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              
-            </div>
+          <div>
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header"><i class="material-icons"></i>Ingredients</div>
+              <div class="collapsible-body" id="ingredients2"></div>
+            </li>
+          </ul>
           </div>
       </div>
 
@@ -68,18 +65,14 @@
           <div class="servings" id="servings3"></div>
           <p id="instructions3"></p>
   
-
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Ingredients
-            </button>
-            <div id="ingredients3" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              
-            </div>
+          <div>
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header"><i class="material-icons"></i>Ingredients</div>
+              <div class="collapsible-body" id="ingredients3"></div>
+            </li>
+          </ul>
           </div>
-
-
-
         </div>
     </div>
 
@@ -91,6 +84,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="script.js" ></script>
 </body>
 </html>
