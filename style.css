@@ -12,3 +12,12 @@ background: linear-gradient(336deg, rgba(148,208,94,1) 10%, rgba(166,198,46,1) 5
     background-color: rgb(216, 214, 214);
     padding: 20px;
 }
+.servings {
+    font-weight: 700;
+}
+.minutes {
+    font-weight: 700;
+}
+.title {
+    font-weight: 700;
+}

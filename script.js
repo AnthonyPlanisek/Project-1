@@ -87,12 +87,12 @@ $("#foodImage3").attr("src", response3[2].image)
         document.getElementById("ingredients3").appendChild(img)
     }
 
-    $("#readyInMinutes1").text(response.meals[0].readyInMinutes)
-    $("#readyInMinutes2").text(response.meals[1].readyInMinutes)
-    $("#readyInMinutes3").text(response.meals[2].readyInMinutes)
-    $("#servings1").text(response.meals[0].servings)
-    $("#servings2").text(response.meals[1].servings)
-    $("#servings3").text(response.meals[2].servings)
+    $("#readyInMinutes1").text("Ready In: " + response.meals[0].readyInMinutes + " Minutes")
+    $("#readyInMinutes2").text("Ready In: " + response.meals[1].readyInMinutes + " Minutes")
+    $("#readyInMinutes3").text("Ready In: " + response.meals[2].readyInMinutes + " Minutes")
+    $("#servings1").text("Serving Size: " + response.meals[0].servings)
+    $("#servings2").text("Serving Size: " + response.meals[1].servings)
+    $("#servings3").text("Serving Size: " + response.meals[2].servings)
 
 });
 
