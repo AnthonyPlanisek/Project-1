@@ -5,14 +5,6 @@
 //get recipe instructions
 
 var saved
-var button1 = $("#button1")
-var button2 = $("#button2")
-var button3 = $("#button3")
-var button4 = $("#button4")
-var button5 = $("#button5")
-var button6 = $("#button6")
-var button7 = $("#button7")
-
 
 
 
@@ -34,21 +26,9 @@ const settings = {
 //gets meal plan data
 $.ajax(settings).done(function recipe(response) {
 	console.log("meals", response);
-    var id1
-    var id2
-    var id3
-    $("button").click(function() {
-        var fired_button = $(this).val();
-    if (fired_button = 1)
     id1 = JSON.parse(response.items[0].value)
     id2 = JSON.parse(response.items[1].value)
     id3 = JSON.parse(response.items[2].value)
-    if (fired_button = 2)
-    id1 = JSON.parse(response.items[3].value)
-    id2 = JSON.parse(response.items[4].value)
-    id3 = JSON.parse(response.items[5].value)
-console.log("hello", id1)
-
 $("#recipeName1").text(id1.title)
 $("#recipeName2").text(id2.title)
 $("#recipeName3").text(id3.title)
@@ -141,42 +121,33 @@ const settings4 = {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
 	}
 };
-
 $.ajax(settings4).done(function (response4) {
 	console.log("nutrition", response4);
 });
-
 */
 
 
 
 });
 
-var currentDay = (moment().format("dddd, MMMM Do YYYY"))
-$("#day").text(currentDay)
 console.log("days in month", moment("2021-06", "YYYY-MM").daysInMonth())
 console.log("day of the month", moment().date())
 console.log("current date", moment().format("dddd, MMMM Do YYYY, h:mm:ss a"))
 /*
 $("#save").click(function data(){
-
     var storage = JSON.parse(localStorage.getItem('cityName')) || []
     
     storage.push(city.val())
-
    localStorage.setItem("cityName", JSON.stringify(storage))
     
    saved = JSON.parse(localStorage.getItem("cityName"))
-
         })
         //retrives data
         function checkLocalStorage() {
            var searches = JSON.parse(localStorage.getItem('cityName'))
-
            // make the buttons and put them on the page
            
         }
-
         checkLocalStorage()
         */
 
@@ -185,4 +156,3 @@ $("#save").click(function data(){
 $(document).ready(function(){
     $('.collapsible').collapsible();
   });
-});
