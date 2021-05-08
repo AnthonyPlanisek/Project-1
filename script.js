@@ -77,18 +77,27 @@ $("#foodImage3").attr("src", response3[2].image)
         var img = document.createElement("img")
         img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[0].extendedIngredients[i].image
         document.getElementById("ingredients1").appendChild(img)
+        var p = document.createElement("p")
+        p.innerHTML = (response3[0].extendedIngredients[i].original)
+        document.getElementById("ingredientslist1").appendChild(p)
     }
    
     for (let i = 0; i < response3[1].extendedIngredients.length; i++) {
         var img = document.createElement("img")
         img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[1].extendedIngredients[i].image
         document.getElementById("ingredients2").appendChild(img)
+        var p = document.createElement("p")
+        p.innerHTML = (response3[1].extendedIngredients[i].original)
+        document.getElementById("ingredientslist2").appendChild(p)
     }
 
     for (let i = 0; i < response3[2].extendedIngredients.length; i++) {
         var img = document.createElement("img")
         img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[2].extendedIngredients[i].image
         document.getElementById("ingredients3").appendChild(img)
+        var p = document.createElement("p")
+        p.innerHTML = (response3[2].extendedIngredients[i].original)
+        document.getElementById("ingredientslist3").appendChild(p)
     }
     //ready in minutes/servings
     $("#readyInMinutes1").text("Ready In: " + response3[0].readyInMinutes + " Minutes")
