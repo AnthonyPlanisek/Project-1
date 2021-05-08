@@ -148,3 +148,10 @@ $("#save").click(function data(){
 
         checkLocalStorage()
         */
+
+
+
+/*$(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+*/
