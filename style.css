@@ -35,3 +35,8 @@ background: linear-gradient(336deg, rgba(148,208,94,1) 10%, rgba(166,198,46,1) 5
 .instructions {
     font-size: 15px;
 }
+
+.button {
+    background-color: black;
+    color: white;
+}
