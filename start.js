@@ -22,13 +22,17 @@ const settings = {
 $(".btn").on("click", function handleMealFormSubmit(event) {
     event.preventDefault()
 
-    var calorieInput = $('#calorie-entry').value;
-    var dietInput = $('#diet-input').value;
-    var excludeInput = $('#exclude-entry').value;
+    var calorieInput = $('#calorie-entry').val();
+    var dietInput = $('#diet-input').val();
+    var excludeInput = $('#exclude-entry').val();
+
+    // check that you have values on all variables on lines 25-27
+    // put them in the location.assign
 
     var queryString = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=${calorieInput}&diet=${dietInput}&exclude=${excludeInput}`;
 
-    location.assign(queryString);
+    console.log('about to change pages')
+    location.assign(`./index.html?calorieInput=${calorieInput}?dietInput=${dietInput}`);
     console.log("3 inputs", queryString );
 });
 
