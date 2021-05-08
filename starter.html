@@ -5,51 +5,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meal Prep</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="" />
-  <link rel="stylesheet" href="" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="starterstyle.css" />
 </head>
 
 <body>
-  <div class="flex-row align-center justify-center min-100-vh bg-primary">
-    <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
-      <h1 class="text-primary">Meal Prep Search:</h1>
-      <form id="meal-form" class="form w-100">
-        <input id="calorie-entry" class="form-input w-100" type="text" placeholder="Daily Calorie Goal">
-        <select id="diet-input" class="form-input w-100">
-          <option value="" disabled selected>Select a meal type...</option>
-          <option value="vegetarian">vegetarian</option>
-          <option value="vegan">vegan</option>
-          <option value="paleo">Paleo</option>
-          <option value="pescetarian">pescetarian</option>
-          <option value="gluten-free">gluten free</option>
-          <option value="grain-free">grain free</option>
-          <option value="dairy-free">dairy free</option>
-          <option value="high-protein">high protein</option>
-          <option value="low-sodium">low sodium</option>
-          <option value="low-carbon">low carb</option>
-          <option value="primal">Primal</option>
-          <option value="ketogenic">ketogenic</option>
+  <div id="div_container" class="centered">
+    <div class="container-info">
+      <h1 class="header-text">Meal Prep Search:</h1>
+      <form id="search-form">
+        <input id="calorie-entry"  type="text" placeholder="Daily Calorie Goal">
+        <input id="exclude-entry" type="text" placeholder="Foods to Exclude">
+        <select class="custom-select">
+          <option disabled selected>Select a Meal Preference...</option>
+          <option value="dairy-free">Dairy Free</option>
           <option value="FODMAP">FODMAP</option>
+          <option value="gluten-free">Gluten Free</option>
+          <option value="grain-free">Grain Free</option>
+          <option value="high-protein">High Protein</option>
+          <option value="ketogenic">Ketogenic</option>
+          <option value="low-carbon">Low Carb</option>
+          <option value="low-sodium">Low Sodium</option>
+          <option value="paleo">Paleo</option>
+          <option value="pescetarian">Pescetarian</option>
+          <option value="primal">Primal</option>
+          <option value="vegan">Vegan</option>
+          <option value="vegetarian">Vegetarian</option>
           <option value="Whole-30">Whole 30</option>
-
         </select>
-        <input id="exclude-entry" class="form-input w-100" type="text" placeholder="Foods to Exclude">
-        <button class="btn btn-info btn-block">Create Meals</button>
+        <button class="btn">Create Meals</button>
       </form>
     </div>
   </div>
+
+  <script src="./assets/js/script.js"></script>
 </body>
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<!-- <script src="script.js" ></script> -->
-<script src="./start.js" ></script>
-</body>
+
 </html>
