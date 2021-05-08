@@ -14,10 +14,24 @@ background: linear-gradient(336deg, rgba(148,208,94,1) 10%, rgba(166,198,46,1) 5
 }
 .servings {
     font-weight: 700;
+    font-size: 20px;
 }
 .minutes {
     font-weight: 700;
+    font-size: 20px;
 }
 .title {
     font-weight: 700;
+}
+.special {
+    width:750px;
+    background-color: rgba(166,198,46,1);
+    font-weight: 700;
+    font-size: 20px;
+}
+.new {
+    background-color: white;
+}
+.instructions {
+    font-size: 15px;
 }
