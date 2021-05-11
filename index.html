@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meal Prep</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-  <link rel="stylesheet" href="starterstyle.css" />
+  <link rel="stylesheet" href="./assets/css/starterstyle.css" />
 </head>
 
 <body>
@@ -16,7 +16,7 @@
       <form id="search-form">
         <input id="calorie-entry"  type="text" placeholder="Daily Calorie Goal">
         <input id="exclude-entry" type="text" placeholder="Foods to Exclude">
-        <select class="custom-select">
+        <select id ="meal-choice" class="custom-select">
           <option disabled selected>Select a Meal Preference...</option>
           <option value="dairy-free">Dairy Free</option>
           <option value="FODMAP">FODMAP</option>
@@ -24,7 +24,7 @@
           <option value="grain-free">Grain Free</option>
           <option value="high-protein">High Protein</option>
           <option value="ketogenic">Ketogenic</option>
-          <option value="low-carbon">Low Carb</option>
+          <option value="low-carb">Low Carb</option>
           <option value="low-sodium">Low Sodium</option>
           <option value="paleo">Paleo</option>
           <option value="pescetarian">Pescetarian</option>
@@ -38,7 +38,15 @@
     </div>
   </div>
 
-  <script src="./assets/js/script.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./assets/js/display-search.js"></script>
 </body>
 
 </html>
