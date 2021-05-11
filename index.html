@@ -1,91 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Prep</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="starterstyle.css" />
 </head>
 
 <body>
-    <h1>Current Day</h1>
-
-    <div>
-      <div class="media-object box">
-        <div class="media-object-section">
-          <img id="foodImage1" class="image" src= "">
-        </div>
-        <div class="media-object-section">
-          <h4 class="title" id="recipeName1"></h4>
-          <div class="minutes" id="readyInMinutes1"></div>
-          <div class="servings" id="servings1"></div>
-          <p class="instructions" id="instructions1"></p>
-          <div>
-            <ul class="collapsible special">
-              <li>
-                <div class="collapsible-header special"><i class="material-icons"></i>Ingredients</div>
-                <div class="collapsible-body new" id="ingredients1"></div>
-                <div class="collapsible-body ingredientslist" id="ingredientslist1"></div>
-              </li>
-            </ul>
-          </div>
-          </div>
-          </div>
-    <div class="media-object box">
-      <div class="media-object-section">
-        <img id="foodImage2" class="image" src= "">
-      </div>
-      <div class="media-object-section">
-        <h4 class="title" id="recipeName2"></h4>
-        <div class="minutes" id="readyInMinutes2"></div>
-          <div class="servings" id="servings2"></div>
-        <p class="instructions" id="instructions2"></p>
-        
-          <div>
-          <ul class="collapsible special">
-            <li>
-              <div class="collapsible-header special"><i class="material-icons"></i>Ingredients</div>
-              <div class="collapsible-body new" id="ingredients2"></div>
-              <div class="collapsible-body ingredientslist" id="ingredientslist2"></div>
-            </li>
-          </ul>
-          </div>
-      </div>
-
+  <div id="div_container" class="centered">
+    <div class="container-info">
+      <h1 class="header-text">Meal Prep Search:</h1>
+      <form id="search-form">
+        <input id="calorie-entry"  type="text" placeholder="Daily Calorie Goal">
+        <input id="exclude-entry" type="text" placeholder="Foods to Exclude">
+        <select class="custom-select">
+          <option disabled selected>Select a Meal Preference...</option>
+          <option value="dairy-free">Dairy Free</option>
+          <option value="FODMAP">FODMAP</option>
+          <option value="gluten-free">Gluten Free</option>
+          <option value="grain-free">Grain Free</option>
+          <option value="high-protein">High Protein</option>
+          <option value="ketogenic">Ketogenic</option>
+          <option value="low-carbon">Low Carb</option>
+          <option value="low-sodium">Low Sodium</option>
+          <option value="paleo">Paleo</option>
+          <option value="pescetarian">Pescetarian</option>
+          <option value="primal">Primal</option>
+          <option value="vegan">Vegan</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="Whole-30">Whole 30</option>
+        </select>
+        <button class="btn">Create Meals</button>
+      </form>
     </div>
-      <div class="media-object box">
-        <div class="media-object-section">
-          <img id="foodImage3" class="image" src= "">
-        </div>
-        <div class="media-object-section">
-          <h4 class="title" id="recipeName3"></h4>
-          <div class="minutes" id="readyInMinutes3"></div>
-          <div class="servings" id="servings3"></div>
-          <p class="instructions" id="instructions3"></p>
-  
-          <div>
-          <ul class="collapsible special">
-            <li>
-              <div class="collapsible-header special"><i class="material-icons"></i>Ingredients</div>
-              <div class="collapsible-body new" id="ingredients3"></div>
-              <div class="collapsible-body ingredientslist" id="ingredientslist3"></div>
-            </li>
-          </ul>
-          </div>
-        </div>
-    </div>
+  </div>
 
-<script
+  <script
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="script.js" ></script>
+  <script src="./start.js"></script>
 </body>
+
 </html>
