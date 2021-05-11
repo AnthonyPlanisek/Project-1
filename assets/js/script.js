@@ -4,7 +4,6 @@
 //get nutrition
 //get recipe instructions
 
-var saved
 
 
 
@@ -163,3 +162,15 @@ $("#save").click(function data(){
 $(document).ready(function(){
     $('.collapsible').collapsible();
   });
+
+
+
+  function checkUrl() {
+
+      console.log('location??? ', location.search)
+
+      // grab the calorieInput and other values from the url
+      // do an api request 
+  }
+
+  checkUrl()
