@@ -155,4 +155,20 @@ $("#save").click(function data(){
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
+<<<<<<< HEAD
   });
+=======
+  });
+
+
+
+  function checkUrl() {
+
+      console.log('location??? ', location.search)
+
+      // grab the calorieInput and other values from the url
+      // do an api request 
+  }
+
+  checkUrl()
+>>>>>>> 0f5890cf2bd0542c589d4a8d4d6d7e3d9c9fde51
