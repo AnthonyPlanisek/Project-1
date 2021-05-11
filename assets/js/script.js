@@ -3,17 +3,34 @@
 //get price
 //get nutrition
 //get recipe instructions
+var calories
+var mealType
+var exclude
+function grabMealParameters() {
+    // use this to grab the parameters/entrys for meal plan out of the URL (ex: '&targetCalories=2200&diet=vegetarian&exclude=shellfish')
+    // and convert it into an array: (['&targetCalories=2200', '&diet=vegetarian', '&exclude=shellfish'])
+    var searchForParameters = document.location.search.split('?');
+
+    // getting calories, mealType and exclude
+    calories = searchForParameters[1].split('=').pop();
+    mealType = searchForParameters[2].split('=').pop();
+    exclude = searchForParameters[3].split('=').pop();
+
+    console.log('calorie', calories);
+    console.log('meal-choice', mealType);
+    console.log('exclude', exclude);
+    //searchApi(calories, mealType, exclude);
+}
+grabMealParameters()
 
 
-
-
-//set up a function for this to play after submitting data
+checkUrl()
 
 //sets meal plan for one day
 const settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=2000&diet=vegetarian&exclude=shellfish%2C%20olives",
+	"url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=${calories}&diet=${mealType}&exclude=${exclude}`,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
@@ -120,11 +137,9 @@ const settings4 = {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
 	}
 };
-
 $.ajax(settings4).done(function (response4) {
 	console.log("nutrition", response4);
 });
-
 */
 
 
@@ -134,26 +149,22 @@ $.ajax(settings4).done(function (response4) {
 console.log("days in month", moment("2021-06", "YYYY-MM").daysInMonth())
 console.log("day of the month", moment().date())
 console.log("current date", moment().format("dddd, MMMM Do YYYY, h:mm:ss a"))
+$("#currentDay").text(moment().format("dddd, MMMM Do YYYY"))
 /*
 $("#save").click(function data(){
-
     var storage = JSON.parse(localStorage.getItem('cityName')) || []
     
     storage.push(city.val())
-
    localStorage.setItem("cityName", JSON.stringify(storage))
     
    saved = JSON.parse(localStorage.getItem("cityName"))
-
         })
         //retrives data
         function checkLocalStorage() {
            var searches = JSON.parse(localStorage.getItem('cityName'))
-
            // make the buttons and put them on the page
            
         }
-
         checkLocalStorage()
         */
 
