@@ -3,6 +3,11 @@
 // diet=vegetarian
 // exclude=shellfish
 
+
+
+
+
+
 var mealFormEl = $('#meal-form') 
 var calorieInput = $('#calorie-entry').value;
 var excludeInput = $('#exclude-entry').value;

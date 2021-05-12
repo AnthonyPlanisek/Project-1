@@ -3,14 +3,37 @@
 //get price
 //get nutrition
 //get recipe instructions
+
+
+
 var calories
 var mealType
 var exclude
+
+const settings9 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
+		"x-rapidapi-host": "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings9).done(function (response9) {
+	console.log(response9);
+    $("#motivation").text(response9.author)
+    $("#motivation2").text(response9.text)
+});
+
+
+
 function grabMealParameters() {
     // use this to grab the parameters/entrys for meal plan out of the URL (ex: '&targetCalories=2200&diet=vegetarian&exclude=shellfish')
     // and convert it into an array: (['&targetCalories=2200', '&diet=vegetarian', '&exclude=shellfish'])
     var searchForParameters = document.location.search.split('?');
-
+    
     // getting calories, mealType and exclude
     calories = searchForParameters[1].split('=').pop();
     mealType = searchForParameters[2].split('=').pop();
