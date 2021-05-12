@@ -257,3 +257,4 @@ $(document).ready(function(){
   }
 
   checkUrl()
+  

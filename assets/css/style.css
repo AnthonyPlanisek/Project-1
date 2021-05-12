@@ -2,6 +2,8 @@
     --darkgrey: rgb(68, 68, 68);
     --main:#77b55a;
     --white: rgb(255, 255, 255);
+    /* google font added can and will edit later */
+    font-family: 'Lato', serif;
 }
 
 body {
@@ -13,6 +15,7 @@ h1 {
     background-image:  url("https://th.bing.com/th/id/Rc9ce858f2d52a8565b50a5754a2079ba?rik=jVieKvRtiUhX%2bw&riu=http%3a%2f%2fimage.made-in-china.com%2f43f34j00ENetmfoKbGbL%2fPorcelain-Floor-Tiles-Fossil-Wood-Light-Grey-.jpg&ehk=XegOLPijUlkMokW0YmnJzGFh6y1osbLeDroJhvSyq5M%3d&risl=&pid=ImgRaw");
     width: 450px;
     padding: 15px;
+    display: flex;
 }
 .image {
     margin-left: 50px;
@@ -61,4 +64,15 @@ h1 {
 .image {
     border: solid  var(--darkgrey) 8px;
     margin-top: 25px;
+}
+.card {
+    float:right;
+    margin-right: 25px;
+    background-image:  url("https://th.bing.com/th/id/Rc9ce858f2d52a8565b50a5754a2079ba?rik=jVieKvRtiUhX%2bw&riu=http%3a%2f%2fimage.made-in-china.com%2f43f34j00ENetmfoKbGbL%2fPorcelain-Floor-Tiles-Fossil-Wood-Light-Grey-.jpg&ehk=XegOLPijUlkMokW0YmnJzGFh6y1osbLeDroJhvSyq5M%3d&risl=&pid=ImgRaw");
+    font-weight: 700;
+    color: var(--darkgrey);
+    font-size: 20px;
+}
+.buttonnew {
+    float: right;
 }
