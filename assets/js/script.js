@@ -81,9 +81,9 @@ var meal3
 
 var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
-console.log("dis", display.length)
+console.log("dis", display)
 
-if (display.length != 22) {
+if (display === null) {
 
 
  
