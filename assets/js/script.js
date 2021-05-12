@@ -73,7 +73,9 @@ var id19
 var id20
 var id21
 var display
-
+var meal1
+var meal2
+var meal3
 
 var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
@@ -154,66 +156,163 @@ $.ajax(settings3).done(function (response3) {
 
 })
 }else{
+    meal1 = display[0]
+    meal2 = display[1]
+    meal3 = display[2]
+    displayMeals()
+    function displayMeals(){
+    document.getElementById("btn1").onclick = function(){
+        meal1 = display[0]
+        meal2 = display[1]
+        meal3 = display[2]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn2").onclick = function(){
+        meal1 = display[3]
+        meal2 = display[4]
+        meal3 = display[5]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn3").onclick = function(){
+        meal1 = display[6]
+        meal2 = display[7]
+        meal3 = display[8]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn4").onclick = function(){
+        meal1 = display[9]
+        meal2 = display[10]
+        meal3 = display[11]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn5").onclick = function(){
+        meal1 = display[12]
+        meal2 = display[13]
+        meal3 = display[14]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn6").onclick = function(){
+        meal1 = display[15]
+        meal2 = display[16]
+        meal3 = display[17]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn7").onclick = function(){
+        meal1 = display[18]
+        meal2 = display[19]
+        meal3 = display[20]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
     //recipe name
-$("#recipeName1").text(display[0].title)
-$("#recipeName2").text(display[1].title)
-$("#recipeName3").text(display[2].title)
+$("#recipeName1").text(meal1.title)
+$("#recipeName2").text(meal2.title)
+$("#recipeName3").text(meal3.title)
     //recipe image
-$("#foodImage1").attr("src", display[0].image)
-$("#foodImage2").attr("src", display[1].image)
-$("#foodImage3").attr("src", display[2].image)
+$("#foodImage1").attr("src", meal1.image)
+$("#foodImage2").attr("src", meal2.image)
+$("#foodImage3").attr("src", meal3.image)
     //displays instruction steps
-for (let i = 0; i < display[0].analyzedInstructions[0].steps.length; i++) {
+for (let i = 0; i < meal1.analyzedInstructions[0].steps.length; i++) {
             
-    $("#instructions1").append(display[0].analyzedInstructions[0].steps[i].step + "<br>")
-            
-}
-for (let i = 0; i < display[1].analyzedInstructions[0].steps.length; i++) {
-            
-    $("#instructions2").append(display[1].analyzedInstructions[0].steps[i].step + "<br>")
+    $("#instructions1").append(meal1.analyzedInstructions[0].steps[i].step + "<br>")
             
 }
-for (let i = 0; i < display[2].analyzedInstructions[0].steps.length; i++) {
+for (let i = 0; i < meal2.analyzedInstructions[0].steps.length; i++) {
             
-    $("#instructions3").append(display[2].analyzedInstructions[0].steps[i].step + "<br>")
+    $("#instructions2").append(meal2.analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+for (let i = 0; i < meal3.analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions3").append(meal3.analyzedInstructions[0].steps[i].step + "<br>")
             
 }
 //lists each ingredient
-for (let i = 0; i < display[0].extendedIngredients.length; i++) {
+for (let i = 0; i < meal1.extendedIngredients.length; i++) {
     var img = document.createElement("img")
-    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + display[0].extendedIngredients[i].image
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + meal1.extendedIngredients[i].image
     document.getElementById("ingredients1").appendChild(img)
     var p = document.createElement("p")
-    p.innerHTML = (display[0].extendedIngredients[i].original)
+    p.innerHTML = (meal1.extendedIngredients[i].original)
     document.getElementById("ingredientslist1").appendChild(p)
 }
 
-for (let i = 0; i < display[1].extendedIngredients.length; i++) {
+for (let i = 0; i < meal2.extendedIngredients.length; i++) {
     var img = document.createElement("img")
-    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + display[1].extendedIngredients[i].image
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + meal2.extendedIngredients[i].image
     document.getElementById("ingredients2").appendChild(img)
     var p = document.createElement("p")
-    p.innerHTML = (display[1].extendedIngredients[i].original)
+    p.innerHTML = (meal2.extendedIngredients[i].original)
     document.getElementById("ingredientslist2").appendChild(p)
 }
 
-for (let i = 0; i < display[2].extendedIngredients.length; i++) {
+for (let i = 0; i < meal3.extendedIngredients.length; i++) {
     var img = document.createElement("img")
-    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + display[2].extendedIngredients[i].image
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + meal3.extendedIngredients[i].image
     document.getElementById("ingredients3").appendChild(img)
     var p = document.createElement("p")
-    p.innerHTML = (display[2].extendedIngredients[i].original)
+    p.innerHTML = (meal3.extendedIngredients[i].original)
     document.getElementById("ingredientslist3").appendChild(p)
 }
 //ready in minutes/servings
-$("#readyInMinutes1").text("Ready In: " + display[0].readyInMinutes + " Minutes")
-$("#readyInMinutes2").text("Ready In: " + display[1].readyInMinutes + " Minutes")
-$("#readyInMinutes3").text("Ready In: " + display[2].readyInMinutes + " Minutes")
-$("#servings1").text("Serving Size: " + display[0].servings)
-$("#servings2").text("Serving Size: " + display[1].servings)
-$("#servings3").text("Serving Size: " + display[2].servings)
+$("#readyInMinutes1").text("Ready In: " + meal1.readyInMinutes + " Minutes")
+$("#readyInMinutes2").text("Ready In: " + meal2.readyInMinutes + " Minutes")
+$("#readyInMinutes3").text("Ready In: " + meal3.readyInMinutes + " Minutes")
+$("#servings1").text("Serving Size: " + meal1.servings)
+$("#servings2").text("Serving Size: " + meal2.servings)
+$("#servings3").text("Serving Size: " + meal3.servings)
+    }
 }
-//add changes to HTML
+
 
 
 
