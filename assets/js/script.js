@@ -49,6 +49,42 @@ grabMealParameters()
 
 checkUrl()
 
+
+var mealPlanData
+var instructionsIngredientsData
+var response
+var id1
+var id2
+var id3
+var id4
+var id5
+var id6
+var id7
+var id8
+var id9
+var id10
+var id11
+var id12
+var id13
+var id14
+var id15
+var id16
+var id17
+var id18
+var id19
+var id20
+var id21
+var meal1
+var meal2
+var meal3
+
+var display = JSON.parse(localStorage.getItem("savedData"))
+console.log("dis2", display)
+
+if (display === null) {
+
+
+ 
 //sets meal plan for one day
 const settings = {
 	"async": true,
@@ -63,20 +99,42 @@ const settings = {
 
 
 //gets meal plan data
-$.ajax(settings).done(function recipe(response) {
+$.ajax(settings).done(function (response) {
 	console.log("meals", response);
-    id1 = JSON.parse(response.items[0].value)
-    id2 = JSON.parse(response.items[1].value)
-    id3 = JSON.parse(response.items[2].value)
-$("#recipeName1").text(id1.title)
-$("#recipeName2").text(id2.title)
-$("#recipeName3").text(id3.title)
+
+mealPlanData = response
+
+id1 = JSON.parse(mealPlanData.items[0].value)
+id2 = JSON.parse(mealPlanData.items[1].value)
+id3 = JSON.parse(mealPlanData.items[2].value)
+id4 = JSON.parse(mealPlanData.items[3].value)
+id5 = JSON.parse(mealPlanData.items[4].value)
+id6 = JSON.parse(mealPlanData.items[5].value)
+id7 = JSON.parse(mealPlanData.items[6].value)
+id8 = JSON.parse(mealPlanData.items[7].value)
+id9 = JSON.parse(mealPlanData.items[8].value)
+id10 = JSON.parse(mealPlanData.items[9].value)
+id11 = JSON.parse(mealPlanData.items[10].value)
+id12 = JSON.parse(mealPlanData.items[11].value)
+id13 = JSON.parse(mealPlanData.items[12].value)
+id14 = JSON.parse(mealPlanData.items[13].value)
+id15 = JSON.parse(mealPlanData.items[14].value)
+id16 = JSON.parse(mealPlanData.items[15].value)
+id17 = JSON.parse(mealPlanData.items[16].value)
+id18 = JSON.parse(mealPlanData.items[17].value)
+id19 = JSON.parse(mealPlanData.items[18].value)
+id20 = JSON.parse(mealPlanData.items[19].value)
+id21 = JSON.parse(mealPlanData.items[20].value)
+}).then(function(){
+    console.log("DATA", mealPlanData)
 
 //get recipe instructions and ingredients
 const settings3 = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk?ids=" + id1.id + "%2C" + id2.id + "%2C" + id3.id,
+	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk?ids=" + id1.id + "%2C" + id2.id + "%2C" + id3.id + "%2C" + id4.id + "%2C" + id5.id + "%2C" + id6.id
+    + "%2C" + id7.id + "%2C" + id8.id + "%2C" + id9.id + "%2C" + id10.id + "%2C" + id11.id + "%2C" + id12.id + "%2C" + id13.id + "%2C" + id14.id + "%2C" + id15.id + "%2C" + id16.id + "%2C" + id17.id + "%2C" + id17.id
+    + "%2C" + id18.id + "%2C" + id19.id + "%2C" + id20.id + "%2C" + id21.id,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
@@ -84,114 +142,232 @@ const settings3 = {
 	}
 };
 
-//displays instructions
+//ajax call for everything else
 $.ajax(settings3).done(function (response3) {
-	console.log("instructions/ingredients", response3);
+    instructionsIngredientsData = response3
 
-$("#foodImage1").attr("src", response3[0].image)
-$("#foodImage2").attr("src", response3[1].image)
-$("#foodImage3").attr("src", response3[2].image)
 
+}).then(function(){
+    //saves the api call to local storage
+    localStorage.setItem("savedData", JSON.stringify(instructionsIngredientsData))
+    console.log("saved", JSON.parse(localStorage.getItem("savedData")))
+
+})
+
+})
+}else{
+    meal1 = display[0]
+    meal2 = display[1]
+    meal3 = display[2]
+    displayMeals()
+    function displayMeals(){
+    document.getElementById("btn1").onclick = function(){
+        meal1 = display[0]
+        meal2 = display[1]
+        meal3 = display[2]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn2").onclick = function(){
+        meal1 = display[3]
+        meal2 = display[4]
+        meal3 = display[5]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn3").onclick = function(){
+        meal1 = display[6]
+        meal2 = display[7]
+        meal3 = display[8]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn4").onclick = function(){
+        meal1 = display[9]
+        meal2 = display[10]
+        meal3 = display[11]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn5").onclick = function(){
+        meal1 = display[12]
+        meal2 = display[13]
+        meal3 = display[14]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn6").onclick = function(){
+        meal1 = display[15]
+        meal2 = display[16]
+        meal3 = display[17]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    document.getElementById("btn7").onclick = function(){
+        meal1 = display[18]
+        meal2 = display[19]
+        meal3 = display[20]
+        $("#instructions1").empty()
+        $("#instructions2").empty()
+        $("#instructions3").empty()
+        $("#ingredients1").empty()
+        $("#ingredients2").empty()
+        $("#ingredients3").empty()
+        $("p").empty()
+        displayMeals()
+    }
+    //recipe name
+$("#recipeName1").text(meal1.title)
+$("#recipeName2").text(meal2.title)
+$("#recipeName3").text(meal3.title)
+    //recipe image
+$("#foodImage1").attr("src", meal1.image)
+$("#foodImage2").attr("src", meal2.image)
+$("#foodImage3").attr("src", meal3.image)
     //displays instruction steps
-    for (let i = 0; i < response3[0].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions1").append(response3[0].analyzedInstructions[0].steps[i].step + "<br>")
-        
+for (let i = 0; i < meal1.analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions1").append(meal1.analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+for (let i = 0; i < meal2.analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions2").append(meal2.analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+for (let i = 0; i < meal3.analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions3").append(meal3.analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+//lists each ingredient
+for (let i = 0; i < meal1.extendedIngredients.length; i++) {
+    var img = document.createElement("img")
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + meal1.extendedIngredients[i].image
+    document.getElementById("ingredients1").appendChild(img)
+    var p = document.createElement("p")
+    p.innerHTML = (meal1.extendedIngredients[i].original)
+    document.getElementById("ingredientslist1").appendChild(p)
+}
+
+for (let i = 0; i < meal2.extendedIngredients.length; i++) {
+    var img = document.createElement("img")
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + meal2.extendedIngredients[i].image
+    document.getElementById("ingredients2").appendChild(img)
+    var p = document.createElement("p")
+    p.innerHTML = (meal2.extendedIngredients[i].original)
+    document.getElementById("ingredientslist2").appendChild(p)
+}
+
+for (let i = 0; i < meal3.extendedIngredients.length; i++) {
+    var img = document.createElement("img")
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + meal3.extendedIngredients[i].image
+    document.getElementById("ingredients3").appendChild(img)
+    var p = document.createElement("p")
+    p.innerHTML = (meal3.extendedIngredients[i].original)
+    document.getElementById("ingredientslist3").appendChild(p)
+}
+//ready in minutes/servings
+$("#readyInMinutes1").text("Ready In: " + meal1.readyInMinutes + " Minutes")
+$("#readyInMinutes2").text("Ready In: " + meal2.readyInMinutes + " Minutes")
+$("#readyInMinutes3").text("Ready In: " + meal3.readyInMinutes + " Minutes")
+$("#servings1").text("Serving Size: " + meal1.servings)
+$("#servings2").text("Serving Size: " + meal2.servings)
+$("#servings3").text("Serving Size: " + meal3.servings)
+
+
+ 
     }
-    
-    for (let i = 0; i < response3[1].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions2").append(response3[1].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
+}
 
-    for (let i = 0; i < response3[2].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions3").append(response3[2].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
+//saves your favorite recipe
+var storage
 
-    //lists each ingredient
-    for (let i = 0; i < response3[0].extendedIngredients.length; i++) {
-        var img = document.createElement("img")
-        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[0].extendedIngredients[i].image
-        document.getElementById("ingredients1").appendChild(img)
-        var p = document.createElement("p")
-        p.innerHTML = (response3[0].extendedIngredients[i].original)
-        document.getElementById("ingredientslist1").appendChild(p)
-    }
-   
-    for (let i = 0; i < response3[1].extendedIngredients.length; i++) {
-        var img = document.createElement("img")
-        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[1].extendedIngredients[i].image
-        document.getElementById("ingredients2").appendChild(img)
-        var p = document.createElement("p")
-        p.innerHTML = (response3[1].extendedIngredients[i].original)
-        document.getElementById("ingredientslist2").appendChild(p)
-    }
+function Save0() {
 
-    for (let i = 0; i < response3[2].extendedIngredients.length; i++) {
-        var img = document.createElement("img")
-        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[2].extendedIngredients[i].image
-        document.getElementById("ingredients3").appendChild(img)
-        var p = document.createElement("p")
-        p.innerHTML = (response3[2].extendedIngredients[i].original)
-        document.getElementById("ingredientslist3").appendChild(p)
-    }
-    //ready in minutes/servings
-    $("#readyInMinutes1").text("Ready In: " + response3[0].readyInMinutes + " Minutes")
-    $("#readyInMinutes2").text("Ready In: " + response3[1].readyInMinutes + " Minutes")
-    $("#readyInMinutes3").text("Ready In: " + response3[2].readyInMinutes + " Minutes")
-    $("#servings1").text("Serving Size: " + response3[0].servings)
-    $("#servings2").text("Serving Size: " + response3[0].servings)
-    $("#servings3").text("Serving Size: " + response3[0].servings)
+    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
 
-});
+    storage.push(meal1.sourceUrl)
 
-//recipe nutrition - ignore
-/*
-const settings4 = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/1003464/nutritionWidget.json",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
-		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-	}
-};
-$.ajax(settings4).done(function (response4) {
-	console.log("nutrition", response4);
-});
-*/
+    localStorage.setItem("savedRecipe", JSON.stringify(storage))
+    console.log("storage", storage)
+}
+
+function Save1() {
+
+    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+
+    storage.push(meal2.sourceUrl)
+
+    localStorage.setItem("savedRecipe", JSON.stringify(storage))
+    console.log("storage", storage)
+}
+
+function Save2() {
+
+    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+
+    storage.push(meal3.sourceUrl)
+
+    localStorage.setItem("savedRecipe", JSON.stringify(storage))
+    console.log("storage", storage)
+}
+
+console.log("storage", JSON.parse(localStorage.getItem("savedRecipe")))
 
 
 
-});
+
+
+
+
+
 
 console.log("days in month", moment("2021-06", "YYYY-MM").daysInMonth())
 console.log("day of the month", moment().date())
 console.log("current date", moment().format("dddd, MMMM Do YYYY, h:mm:ss a"))
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"))
-/*
-$("#save").click(function data(){
-    var storage = JSON.parse(localStorage.getItem('cityName')) || []
-    
-    storage.push(city.val())
-   localStorage.setItem("cityName", JSON.stringify(storage))
-    
-   saved = JSON.parse(localStorage.getItem("cityName"))
-        })
-        //retrives data
-        function checkLocalStorage() {
-           var searches = JSON.parse(localStorage.getItem('cityName'))
-           // make the buttons and put them on the page
-           
-        }
-        checkLocalStorage()
-        */
 
-
+var recipe1 = $("#recipeName1")
+console.log("recipe1", recipe1)
+localStorage.setItem("foodName", JSON.stringify(recipe1))
+console.log("name", localStorage.getItem("foodName"))
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
