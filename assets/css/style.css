@@ -76,3 +76,11 @@ h1 {
 .buttonnew {
     float: right;
 }
+
+.nav-wrapper {
+    background-color: forestgreen;
+}
+
+.btn {
+    background-color: gray;
+}
