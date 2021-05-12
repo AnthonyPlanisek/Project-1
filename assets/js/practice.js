@@ -11,9 +11,9 @@ var numURL = num + "URL"
 localStorage.setItem(num, data[num].title)
 localStorage.setItem(numURL, data[num].sourceUrl)
 //   need to see what the variable is for the meals object is
-var recipeName = display[0].title
+var recipeName = response3[0].title
 //   need to see what the variable is for the ingrediants object is
-var recipeLink = display[0].sourceUrl
+var recipeLink = response3[0].sourceUrl
 }
 mealOneButton.addEventListener('click', savedMealList);
 mealTwoButton.addEventListener('click', savedMealList);
