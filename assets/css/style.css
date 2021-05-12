@@ -2,10 +2,14 @@
     --darkgrey: rgb(68, 68, 68);
     --main:#77b55a;
     --white: rgb(255, 255, 255);
+    /* google font added can and will edit later */
+    font-family: 'Lato', serif;
 }
 
 body {
     background: var(--main);
+    /* google font added can and will edit later
+    font-family: 'Lato', serif; */
 }
 h1 {
     font-weight: 700;
