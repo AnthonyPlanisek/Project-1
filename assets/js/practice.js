@@ -46,3 +46,9 @@ function getID (event) {
 // 1. removes current number from button id: "button-0" becomes "button-"
 // 2. adds new number to button id: "button-" becomes "button-3"
 // 3. does this for all 3 buttons on page.
+
+function changeId () {
+  
+  
+
+}
