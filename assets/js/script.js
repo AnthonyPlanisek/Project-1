@@ -74,14 +74,12 @@ var id18
 var id19
 var id20
 var id21
-var display
 var meal1
 var meal2
 var meal3
 
 var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
-console.log("dis", display)
 
 if (display === null) {
 
@@ -312,16 +310,46 @@ $("#readyInMinutes3").text("Ready In: " + meal3.readyInMinutes + " Minutes")
 $("#servings1").text("Serving Size: " + meal1.servings)
 $("#servings2").text("Serving Size: " + meal2.servings)
 $("#servings3").text("Serving Size: " + meal3.servings)
+
+
+ 
     }
 }
 
+//saves your favorite recipe
+var storage
 
+function Save0() {
 
+    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
 
+    storage.push(meal1.sourceUrl)
 
+    localStorage.setItem("savedRecipe", JSON.stringify(storage))
+    console.log("storage", storage)
+}
 
+function Save1() {
 
+    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
 
+    storage.push(meal2.sourceUrl)
+
+    localStorage.setItem("savedRecipe", JSON.stringify(storage))
+    console.log("storage", storage)
+}
+
+function Save2() {
+
+    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+
+    storage.push(meal3.sourceUrl)
+
+    localStorage.setItem("savedRecipe", JSON.stringify(storage))
+    console.log("storage", storage)
+}
+
+console.log("storage", JSON.parse(localStorage.getItem("savedRecipe")))
 
 
 
