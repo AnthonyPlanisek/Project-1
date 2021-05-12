@@ -77,7 +77,7 @@ var display
 
 var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
-console.log("dis", display.length)
+// console.log("dis", display.length)
 
 if (display.length != 22) {
 
@@ -255,5 +255,3 @@ $(document).ready(function(){
   }
 
   checkUrl()
-
-

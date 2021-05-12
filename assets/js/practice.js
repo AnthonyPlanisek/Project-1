@@ -6,18 +6,18 @@
 ;
 function savedMealList (event){
 var id = event.target.id
-var num = id[id.length -(length -1)]
+var num = id[id.length - 1]
 var numURL = num + "URL"
-localStorage.setItem(num, data[num].title)
-localStorage.setItem(numURL, data[num].sourceUrl)
-//   need to see what the variable is for the meals object is
-var recipeName = response3[i].title
+
+var recipeName = display[num].title
 //   need to see what the variable is for the ingrediants object is
-var recipeLink = response3[i].sourceUrl
+var recipeLink = display[num].sourceUrl
+localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
+
 }
-mealZeroButton.addEventListener('click', savedMealList);
-mealOneButton.addEventListener('click', savedMealList);
-mealTwoButton.addEventListener('click', savedMealList);
+mealZeroButton.addEventListener('click', getID);
+mealOneButton.addEventListener('click', getID);
+mealTwoButton.addEventListener('click', getID);
 
 var mealZeroButton = document.querySelector('#button-0');
 var mealOneButton = document.querySelector('#button-1');
@@ -32,10 +32,20 @@ function getID (event) {
     $(".addBtn").each(function () {
     var id = parseInt($(this).attr("id").split("-")[1]);
     console.log("ID #?!", id);
+    savedFavorites (id);
     return id;
     })
 }
 
+function savedFavorites (event) {
+  
+  //   need to see what the variable is for the meals object is
+  var recipeName = display[event].title
+  //   need to see what the variable is for the ingrediants object is
+  var recipeLink = display[evet].sourceUrl
+  localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
+
+}
 // mealZeroButton.addEventListener('click', getID);
 // mealOneButton.addEventListener('click', getID);
 // mealTwoButton.addEventListener('click', getID);
@@ -47,8 +57,39 @@ function getID (event) {
 // 2. adds new number to button id: "button-" becomes "button-3"
 // 3. does this for all 3 buttons on page.
 
-function changeId () {
-  
-  
 
-}
+
+  
+var mealZeroButton = document.querySelector('#button-0');
+var mealOneButton = document.querySelector('#button-1');
+var mealTwoButton = document.querySelector('#button-2');
+
+//   add to click event for daily button - toggle the ids as you change pages you can change ids to go with that page.
+//   toggling - delete ID number and add new one.
+//   pass a parameter like event.target.id which will give the ID of the button
+//   $(".addBtn").on("click", function getID (event) {
+//       event.preventDefault();
+
+//       $(".addBtn").each(function () {
+//       var id = parseInt($(this).attr("id").split("-")[1]);
+//       console.log("ID #?!", id);
+//     //   savedFavorites (id);
+//       return id;
+//       });
+//   })
+
+$(".addBtn").on("click", function savedFavorites (event) {
+      event.preventDefault();
+      var id = parseInt($(this).attr("id"))
+      console.log("int id", id);
+  //   need to see what the variable is for the meals object is
+  var recipeName = display[id].title
+  console.log("NAME", recipeName);
+  //   need to see what the variable is for the ingrediants object is
+  var recipeLink = display[id].sourceUrl
+  console.log("URL", recipeLink);
+  // localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
+
+});
+
+
