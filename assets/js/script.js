@@ -74,8 +74,17 @@ var id18
 var id19
 var id20
 var id21
+var display
 
 
+var display = JSON.parse(localStorage.getItem("savedData"))
+console.log("dis2", display)
+console.log("dis", display.length)
+
+if (display.length != 22) {
+
+
+ 
 //sets meal plan for one day
 const settings = {
 	"async": true,
@@ -92,17 +101,8 @@ const settings = {
 //gets meal plan data
 $.ajax(settings).done(function (response) {
 	console.log("meals", response);
-    /*
-    id1 = JSON.parse(response.items[0].value)
-    id2 = JSON.parse(response.items[1].value)
-    id3 = JSON.parse(response.items[2].value)
-$("#recipeName1").text(id1.title)
-$("#recipeName2").text(id2.title)
-$("#recipeName3").text(id3.title)
-*/
+
 mealPlanData = response
-
-
 
 id1 = JSON.parse(mealPlanData.items[0].value)
 id2 = JSON.parse(mealPlanData.items[1].value)
@@ -125,18 +125,8 @@ id18 = JSON.parse(mealPlanData.items[17].value)
 id19 = JSON.parse(mealPlanData.items[18].value)
 id20 = JSON.parse(mealPlanData.items[19].value)
 id21 = JSON.parse(mealPlanData.items[20].value)
-console.log("id", id1)
-console.log(id1.id)
 }).then(function(){
     console.log("DATA", mealPlanData)
-
-
-
-
-
-
-
-
 
 //get recipe instructions and ingredients
 const settings3 = {
@@ -152,106 +142,79 @@ const settings3 = {
 	}
 };
 
-//displays instructions
+//ajax call for everything else
 $.ajax(settings3).done(function (response3) {
     instructionsIngredientsData = response3
-    
-/*$("#foodImage1").attr("src", response3[0].image)
-$("#foodImage2").attr("src", response3[1].image)
-$("#foodImage3").attr("src", response3[2].image)
 
-    //displays instruction steps
-    for (let i = 0; i < response3[0].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions1").append(response3[0].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
-    
-    for (let i = 0; i < response3[1].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions2").append(response3[1].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
 
-    for (let i = 0; i < response3[2].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions3").append(response3[2].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
-
-    //lists each ingredient
-    for (let i = 0; i < response3[0].extendedIngredients.length; i++) {
-        var img = document.createElement("img")
-        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[0].extendedIngredients[i].image
-        document.getElementById("ingredients1").appendChild(img)
-        var p = document.createElement("p")
-        p.innerHTML = (response3[0].extendedIngredients[i].original)
-        document.getElementById("ingredientslist1").appendChild(p)
-    }
-   
-    for (let i = 0; i < response3[1].extendedIngredients.length; i++) {
-        var img = document.createElement("img")
-        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[1].extendedIngredients[i].image
-        document.getElementById("ingredients2").appendChild(img)
-        var p = document.createElement("p")
-        p.innerHTML = (response3[1].extendedIngredients[i].original)
-        document.getElementById("ingredientslist2").appendChild(p)
-    }
-
-    for (let i = 0; i < response3[2].extendedIngredients.length; i++) {
-        var img = document.createElement("img")
-        img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + response3[2].extendedIngredients[i].image
-        document.getElementById("ingredients3").appendChild(img)
-        var p = document.createElement("p")
-        p.innerHTML = (response3[2].extendedIngredients[i].original)
-        document.getElementById("ingredientslist3").appendChild(p)
-    }
-    //ready in minutes/servings
-    $("#readyInMinutes1").text("Ready In: " + response3[0].readyInMinutes + " Minutes")
-    $("#readyInMinutes2").text("Ready In: " + response3[1].readyInMinutes + " Minutes")
-    $("#readyInMinutes3").text("Ready In: " + response3[2].readyInMinutes + " Minutes")
-    $("#servings1").text("Serving Size: " + response3[0].servings)
-    $("#servings2").text("Serving Size: " + response3[0].servings)
-    $("#servings3").text("Serving Size: " + response3[0].servings)
-*/
 }).then(function(){
     //saves the api call to local storage
-    console.log("DATA2", instructionsIngredientsData)
     localStorage.setItem("savedData", JSON.stringify(instructionsIngredientsData))
     console.log("saved", JSON.parse(localStorage.getItem("savedData")))
-    var display = JSON.parse(localStorage.getItem("savedData"))
-    console.log("title", display[0].title)
-        //recipe name
-    $("#recipeName1").text(display[0].title)
-    $("#recipeName2").text(display[1].title)
-    $("#recipeName3").text(display[2].title)
-        //recipe image
-    $("#foodImage1").attr("src", display[0].image)
-    $("#foodImage2").attr("src", display[1].image)
-    $("#foodImage3").attr("src", display[2].image)
-        //displays instruction steps
-    for (let i = 0; i < display[0].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions1").append(display[0].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
-    
-    for (let i = 0; i < display[1].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions2").append(display[1].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
-
-    for (let i = 0; i < display[2].analyzedInstructions[0].steps.length; i++) {
-        
-        $("#instructions3").append(display[2].analyzedInstructions[0].steps[i].step + "<br>")
-        
-    }
-})
 
 })
 
+})
+}else{
+    //recipe name
+$("#recipeName1").text(display[0].title)
+$("#recipeName2").text(display[1].title)
+$("#recipeName3").text(display[2].title)
+    //recipe image
+$("#foodImage1").attr("src", display[0].image)
+$("#foodImage2").attr("src", display[1].image)
+$("#foodImage3").attr("src", display[2].image)
+    //displays instruction steps
+for (let i = 0; i < display[0].analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions1").append(display[0].analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+for (let i = 0; i < display[1].analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions2").append(display[1].analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+for (let i = 0; i < display[2].analyzedInstructions[0].steps.length; i++) {
+            
+    $("#instructions3").append(display[2].analyzedInstructions[0].steps[i].step + "<br>")
+            
+}
+//lists each ingredient
+for (let i = 0; i < display[0].extendedIngredients.length; i++) {
+    var img = document.createElement("img")
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + display[0].extendedIngredients[i].image
+    document.getElementById("ingredients1").appendChild(img)
+    var p = document.createElement("p")
+    p.innerHTML = (display[0].extendedIngredients[i].original)
+    document.getElementById("ingredientslist1").appendChild(p)
+}
 
+for (let i = 0; i < display[1].extendedIngredients.length; i++) {
+    var img = document.createElement("img")
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + display[1].extendedIngredients[i].image
+    document.getElementById("ingredients2").appendChild(img)
+    var p = document.createElement("p")
+    p.innerHTML = (display[1].extendedIngredients[i].original)
+    document.getElementById("ingredientslist2").appendChild(p)
+}
+
+for (let i = 0; i < display[2].extendedIngredients.length; i++) {
+    var img = document.createElement("img")
+    img.src = "https://spoonacular.com/cdn/ingredients_100x100/" + display[2].extendedIngredients[i].image
+    document.getElementById("ingredients3").appendChild(img)
+    var p = document.createElement("p")
+    p.innerHTML = (display[2].extendedIngredients[i].original)
+    document.getElementById("ingredientslist3").appendChild(p)
+}
+//ready in minutes/servings
+$("#readyInMinutes1").text("Ready In: " + display[0].readyInMinutes + " Minutes")
+$("#readyInMinutes2").text("Ready In: " + display[1].readyInMinutes + " Minutes")
+$("#readyInMinutes3").text("Ready In: " + display[2].readyInMinutes + " Minutes")
+$("#servings1").text("Serving Size: " + display[0].servings)
+$("#servings2").text("Serving Size: " + display[1].servings)
+$("#servings3").text("Serving Size: " + display[2].servings)
+}
 //add changes to HTML
 
 
