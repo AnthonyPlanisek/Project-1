@@ -1,11 +1,31 @@
-//get 1 day meal day - breakfast, lunch, dinner/name and time to cook -DONE
-//get ingredients - DONE
+
+
 //get price
 //get nutrition
 //get recipe instructions
+
+
+
 var calories
 var mealType
 var exclude
+
+const settings9 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "08eab0a1b7msh583dcfd3bbfa1acp16f8dcjsn0ba008005af3",
+		"x-rapidapi-host": "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings9).done(function (response9) {
+	console.log(response9);
+    $("#motivation").text(response9.author)
+    $("#motivation2").text(response9.text)
+});
 
 function grabMealParameters() {
     // use this to grab the parameters/entrys for meal plan out of the URL (ex: '&targetCalories=2200&diet=vegetarian&exclude=shellfish')
@@ -186,7 +206,3 @@ $(document).ready(function(){
   }
 
   checkUrl()
-
-  function addTwoMealList ()
-//   add an ID into HTML that is connected up top to the variable savedMealBtn
-  savedMealsBtn.addEventListener('click', addTwoMealList);
