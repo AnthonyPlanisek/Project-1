@@ -21,6 +21,8 @@ const settings9 = {
 	}
 };
 
+
+
 $.ajax(settings9).done(function (response9) {
 	console.log(response9);
     $("#motivation").text(response9.author)
@@ -81,7 +83,7 @@ var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
 // console.log("dis", display.length)
 
-if (display.length != 22) {
+if (display === null) {
 
 
  
