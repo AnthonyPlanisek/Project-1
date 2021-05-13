@@ -7,7 +7,8 @@ body {
     /* background-color: #cccccc; */
     
 }
-#div_container {
+
+#div-container {
     opacity: 0.9;
     background-color: white;
     width: 300px;
@@ -29,27 +30,38 @@ body {
     align-items:center;
 }
 
-#calorie-entry {
-    padding: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
+.entry-form {
+    width: 270px;
+    padding: 15px 25px;
+    font-weight: 540;
+    font-size: 14px;
+    color: #9D9E9E;
+    text-shadow: 1px 1px 0 #FFF;
+    background: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.50);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.50);
 }
 
-
-#exclude-entry{
-    padding: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
-
+.entry-form:focus {
+    background: #DFE9EC;
+    color: #414848;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+    outline: 0;
 }
 
-.custom-select {
-    padding: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
-  }
+.entry-form:hover {
+    background: #DFE9EC;
+    color: #414848;
+}
 
-
+#meal-choice {
+    color: #77b55a;
+}
 
 .btn {
     box-shadow: 0px 10px 14px -7px #3e7327;
