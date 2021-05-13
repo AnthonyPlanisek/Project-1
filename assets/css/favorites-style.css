@@ -5,3 +5,27 @@
     /* google font added can and will edit later */
     font-family: 'Lato', serif;
 }
+
+body {
+    font-size: 27px;
+    background: url("mealprep2.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+}
+
+.container {
+    opacity: 0.9;
+    background-color: white;
+    width: 480px;
+    border: 15px solid #77b55a;
+    padding: 50px;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    text-align: center;
+}
