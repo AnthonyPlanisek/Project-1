@@ -38,12 +38,13 @@ $("#motivation2").text(quote.text)
 function grabMealParameters() {
     // use this to grab the parameters/entrys for meal plan out of the URL (ex: '&targetCalories=2200&diet=vegetarian&exclude=shellfish')
     // and convert it into an array: (['&targetCalories=2200', '&diet=vegetarian', '&exclude=shellfish'])
-    var searchForParameters = document.location.search.split('?');
-
+    var searchForParameters = document.location.search && document.location.search.split('?');
+console.log('what are you ', document.location.search)
     // getting calories, mealType and exclude
-    calories = searchForParameters[1].split('=').pop();
-    mealType = searchForParameters[2].split('=').pop();
-    exclude = searchForParameters[3].split('=').pop();
+
+        calories = searchForParameters && searchForParameters[1].split('=').pop();
+        mealType = searchForParameters && searchForParameters[2].split('=').pop();
+        exclude = searchForParameters && searchForParameters[3].split('=').pop();
 
     console.log('calorie', calories);
     console.log('meal-choice', mealType);
