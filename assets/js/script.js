@@ -9,7 +9,7 @@
 var calories
 var mealType
 var exclude
-
+var quote 
 const settings9 = {
 	"async": true,
 	"crossDomain": true,
@@ -25,9 +25,13 @@ const settings9 = {
 
 $.ajax(settings9).done(function (response9) {
 	console.log(response9);
-    $("#motivation").text(response9.author)
-    $("#motivation2").text(response9.text)
-});
+    quote = response9
+    
+    
+}).then(function (){
+$("#motivation").text(quote.author)
+$("#motivation2").text(quote.text)
+
 
 function grabMealParameters() {
     // use this to grab the parameters/entrys for meal plan out of the URL (ex: '&targetCalories=2200&diet=vegetarian&exclude=shellfish')
@@ -172,6 +176,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     document.getElementById("btn2").onclick = function(){
@@ -185,6 +191,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     document.getElementById("btn3").onclick = function(){
@@ -198,6 +206,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     document.getElementById("btn4").onclick = function(){
@@ -211,6 +221,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     document.getElementById("btn5").onclick = function(){
@@ -224,6 +236,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     document.getElementById("btn6").onclick = function(){
@@ -237,6 +251,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     document.getElementById("btn7").onclick = function(){
@@ -250,6 +266,8 @@ $.ajax(settings3).done(function (response3) {
         $("#ingredients2").empty()
         $("#ingredients3").empty()
         $("p").empty()
+        $("#motivation").text(quote.author)
+        $("#motivation2").text(quote.text)
         displayMeals()
     }
     //recipe name
@@ -315,7 +333,7 @@ $("#servings3").text("Serving Size: " + meal3.servings)
  
     }
 }
-
+})
 //saves your favorite recipe
 
 
