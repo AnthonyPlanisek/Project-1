@@ -16,15 +16,16 @@
 
   <nav>
     <div class="nav-wrapper">
+      <div class="newday">Plan ahead for your week!</div>
       <ul class="left hide-on-med-and-down">
-        <li><a id="btn1" class="waves-effect waves-light btn">Day 1</a></li>
-        <li><a id="btn2" class="waves-effect waves-light btn">Day 2</a></li>
-        <li><a id="btn3" class="waves-effect waves-light btn">Day 3</a></li>
-        <li><a id="btn4" class="waves-effect waves-light btn">Day 4</a></li>
-        <li><a id="btn5" class="waves-effect waves-light btn">Day 5</a></li>
-        <li><a id="btn6" class="waves-effect waves-light btn">Day 6</a></li>
-        <li><a id="btn7" class="waves-effect waves-light btn">Day 7</a></li>
-        <li><a id="savedbtn" class="waves-effect waves-light btn" onclick="location.href='favorites-list.html'">Saved Recipes</a></li>
+        <li><a id="btn1" class="waves-effect waves-light btn daybutton">Day 1</a></li>
+        <li><a id="btn2" class="waves-effect waves-light btn daybutton">Day 2</a></li>
+        <li><a id="btn3" class="waves-effect waves-light btn daybutton">Day 3</a></li>
+        <li><a id="btn4" class="waves-effect waves-light btn daybutton">Day 4</a></li>
+        <li><a id="btn5" class="waves-effect waves-light btn daybutton">Day 5</a></li>
+        <li><a id="btn6" class="waves-effect waves-light btn daybutton">Day 6</a></li>
+        <li><a id="btn7" class="waves-effect waves-light btn daybutton">Day 7</a></li>
+        <li><a id="savedbtn" class="waves-effect waves-light btn daybutton" onclick="location.href='favorites-list.html'">Saved Recipes</a></li>
       </ul>
     </div>
   </nav>
@@ -42,7 +43,7 @@
       </div>
   </div>
   <div>
-    <h1 id="currentDay">Current Day</h1>
+    <h1 id="currentDay" class="currentday">Current Day</h1>
   </div>
     
 
@@ -54,6 +55,7 @@
         </div>
         <div class="media-object-section">
           <h4 class="title" id="recipeName1"></h4>
+          <button id="button-0" class="btn savebutton" onclick="Save0()">save recipe</button>
           <div class="minutes" id="readyInMinutes1"></div>
           <div class="servings" id="servings1"></div>
           <p class="instructions" id="instructions1"></p>
@@ -66,7 +68,6 @@
               </li>
             </ul>
           </div> 
-          <button id="button-0" class="btn" onclick="Save0()">save recipe</button>
           </div>
           </div>
     <div class="media-object box">
@@ -75,6 +76,7 @@
       </div>
       <div class="media-object-section">
         <h4 class="title" id="recipeName2"></h4>
+        <button id="button-1" class="btn savebutton" onclick="Save1()">save recipe</button>
         <div class="minutes" id="readyInMinutes2"></div>
           <div class="servings" id="servings2"></div>
         <p class="instructions" id="instructions2"></p>
@@ -88,7 +90,7 @@
             </li>
           </ul>
           </div>
-          <button id="button-1" class="btn" onclick="Save1()">save recipe</button>
+        
       </div>
 
     </div>
@@ -98,6 +100,7 @@
         </div>
         <div class="media-object-section">
           <h4 class="title" id="recipeName3"></h4>
+          <button id="button-2" class="btn savebutton" onclick="Save2()">save recipe</button>
           <div class="minutes" id="readyInMinutes3"></div>
           <div class="servings" id="servings3"></div>
           <p class="instructions" id="instructions3"></p>
@@ -111,7 +114,6 @@
             </li>
           </ul>
           </div>
-          <button id="button-2" class="btn" onclick="Save2()">save recipe</button>
         </div>
     </div>
 
