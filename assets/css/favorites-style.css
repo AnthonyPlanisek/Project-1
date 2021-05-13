@@ -1,0 +1,7 @@
+* {
+    --darkgrey: rgb(68, 68, 68);
+    --main:#77b55a;
+    --white: rgb(255, 255, 255);
+    /* google font added can and will edit later */
+    font-family: 'Lato', serif;
+}

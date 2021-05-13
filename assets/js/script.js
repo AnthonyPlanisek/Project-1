@@ -1,5 +1,5 @@
-//get 1 day meal day - breakfast, lunch, dinner/name and time to cook -DONE
-//get ingredients - DONE
+
+
 //get price
 //get nutrition
 //get recipe instructions
@@ -21,19 +21,19 @@ const settings9 = {
 	}
 };
 
+
+
 $.ajax(settings9).done(function (response9) {
 	console.log(response9);
     $("#motivation").text(response9.author)
     $("#motivation2").text(response9.text)
 });
 
-
-
 function grabMealParameters() {
     // use this to grab the parameters/entrys for meal plan out of the URL (ex: '&targetCalories=2200&diet=vegetarian&exclude=shellfish')
     // and convert it into an array: (['&targetCalories=2200', '&diet=vegetarian', '&exclude=shellfish'])
     var searchForParameters = document.location.search.split('?');
-    
+
     // getting calories, mealType and exclude
     calories = searchForParameters[1].split('=').pop();
     mealType = searchForParameters[2].split('=').pop();
@@ -317,36 +317,53 @@ $("#servings3").text("Serving Size: " + meal3.servings)
 }
 
 //saves your favorite recipe
-var storage
+
+
+var favoritesList
 
 function Save0() {
 
-    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var favoritesList = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var recipeName = meal1.title
+    var recipeLink = meal1.sourceUrl
+    localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
 
-    storage.push(meal1.sourceUrl)
+    var newFavorite = {mealTitle: recipeName, mealURL: recipeLink}
 
-    localStorage.setItem("savedRecipe", JSON.stringify(storage))
-    console.log("storage", storage)
+    favoritesList.push(newFavorite)
+
+    window.localStorage.setItem("savedRecipe", JSON.stringify(favoritesList))
+    console.log("savedfavorites", favoritesList);
 }
 
 function Save1() {
 
-    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var favoritesList = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var recipeName = meal2.title
+    var recipeLink = meal2.sourceUrl
+    localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
 
-    storage.push(meal2.sourceUrl)
+    var newFavorite = {mealTitle: recipeName, mealURL: recipeLink}
 
-    localStorage.setItem("savedRecipe", JSON.stringify(storage))
-    console.log("storage", storage)
+    favoritesList.push(newFavorite)
+
+    window.localStorage.setItem("savedRecipe", JSON.stringify(favoritesList))
+    console.log("savedfavorites", favoritesList);
 }
 
 function Save2() {
 
-    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var favoritesList = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var recipeName = meal3.title
+    var recipeLink = meal3.sourceUrl
+    localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
 
-    storage.push(meal3.sourceUrl)
+    var newFavorite = {mealTitle: recipeName, mealURL: recipeLink}
 
-    localStorage.setItem("savedRecipe", JSON.stringify(storage))
-    console.log("storage", storage)
+    favoritesList.push(newFavorite)
+
+    window.localStorage.setItem("savedRecipe", JSON.stringify(favoritesList))
+    console.log("savedfavorites", favoritesList);
 }
 
 console.log("storage", JSON.parse(localStorage.getItem("savedRecipe")))
@@ -384,4 +401,3 @@ $(document).ready(function(){
   }
 
   checkUrl()
-  
