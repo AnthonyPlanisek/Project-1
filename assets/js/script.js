@@ -5,7 +5,9 @@
 //get recipe instructions
 
 
-
+var meal1
+var meal2
+var meal3
 var calories
 var mealType
 var exclude
@@ -78,9 +80,7 @@ var id18
 var id19
 var id20
 var id21
-var meal1
-var meal2
-var meal3
+
 
 var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
@@ -155,6 +155,7 @@ $.ajax(settings3).done(function (response3) {
     //saves the api call to local storage
     localStorage.setItem("savedData", JSON.stringify(instructionsIngredientsData))
     console.log("saved", JSON.parse(localStorage.getItem("savedData")))
+    location.reload()
 
 })
 
