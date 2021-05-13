@@ -3,11 +3,6 @@
 // diet=vegetarian
 // exclude=shellfish
 
-
-
-
-
-
 var mealFormEl = $('#meal-form') 
 var calorieInput = $('#calorie-entry').value;
 var excludeInput = $('#exclude-entry').value;
@@ -62,17 +57,20 @@ function grabMealParameters() {
     searchApi(calories, mealType, exclude);
 }
 
+var data
+
 function searchAPI(calories, mealType, exclude) {
     var locQueryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&&targetCalories=&diet=&exclude="
     locQueryUrl = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=${calories}&diet=${mealType}&exclude=${exclude}`
 
-    fetch(locQueryUrl)
-        .then(function (locResponse) {
+    $.ajax({ url: locQueryUrl })
+        .then(function (response) {
             // query will on page - dont think we need? woudl need to creat a div in html with the id "result-content" -
             // create a global variable called resultTextEl that would call on the "result-content" id
             // resultTextEl.textContent = locRes.search.query;
-            console.log("w/o json: ", locResponse)
-            console.log("json: ", locResponse.json());
+            console.log("w/o json: ", response)
+            console.log("json: ", response.json());
+            data = response
             return response.json();
             
 
