@@ -76,11 +76,30 @@ h1 {
 .buttonnew {
     float: right;
 }
-
 .nav-wrapper {
-    background-color: forestgreen;
+    background-image: url("https://th.bing.com/th/id/Rc9ce858f2d52a8565b50a5754a2079ba?rik=jVieKvRtiUhX%2bw&riu=http%3a%2f%2fimage.made-in-china.com%2f43f34j00ENetmfoKbGbL%2fPorcelain-Floor-Tiles-Fossil-Wood-Light-Grey-.jpg&ehk=XegOLPijUlkMokW0YmnJzGFh6y1osbLeDroJhvSyq5M%3d&risl=&pid=ImgRaw");
+    padding: 10px;
 }
 
-.btn {
+.daybutton {
     background-color: gray;
+    margin-top: 25px;
+    display: flex;
+}
+.newday {
+    display: flex;
+    float: left;
+    font-weight: 700;
+    font-size: 30px;
+    margin-right: 200px;
+    margin-bottom: 30px;
+    color: var(--darkgrey)
+}
+.savebutton {
+    display:flex;
+    float: right;
+    background-color: gray;
+}
+.currentday {
+    font-size: 50px;
 }
