@@ -9,9 +9,9 @@ function displayLocalStorage() {
         var favoritesLink = displayFavoritesList[i].mealURL
 
         // $('#past-recipes').append('<div class="favorite-recipes">' + displayFavoritesList[i].mealTitle + '</div>', "<a id='past-urls'>" + favoritesLink + "</a>")
-        // $('#past-recipes').append('<div class="favorite-recipes">' + displayFavoritesList[i].mealTitle + '</div>', "<a id='past-urls' href='" + favoritesLink + "!'></a>")
+        $('#past-recipes').append("<div class='favorite-recipes'>" + displayFavoritesList[i].mealTitle + "</div>", "<a id='past-urls' class='button' target='_blank' href='" + favoritesLink + "'>Recipe Link</a>")
         
-        $('#past-recipes').append('<div class="favorite-recipes">' + displayFavoritesList[i].mealTitle + '</div>', "<a id='past-urls' class='btn waves-effect waves-light' type='submit' name='action'>" + favoritesLink + "</a>")
+        // $('#past-recipes').append('<div class="favorite-recipes">' + displayFavoritesList[i].mealTitle + '</div>', "<a id='past-urls' class='btn waves-effect waves-light' type='submit' name='action'>" + favoritesLink + "</a>")
 
         console.log(displayFavoritesList[i], "displayFavoritesList[i]") 
 
