@@ -80,10 +80,6 @@ var meal3
 
 var display = JSON.parse(localStorage.getItem("savedData"))
 console.log("dis2", display)
-<<<<<<< HEAD
-// console.log("dis", display.length)
-=======
->>>>>>> 080a6173ba9be7de40afc967dccee1eb18a1616d
 
 if (display === null) {
 
@@ -321,36 +317,53 @@ $("#servings3").text("Serving Size: " + meal3.servings)
 }
 
 //saves your favorite recipe
-var storage
+
+
+var favoritesList
 
 function Save0() {
 
-    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var favoritesList = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var recipeName = meal1.title
+    var recipeLink = meal1.sourceUrl
+    localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
 
-    storage.push(meal1.sourceUrl)
+    var newFavorite = {mealTitle: recipeName, mealURL: recipeLink}
 
-    localStorage.setItem("savedRecipe", JSON.stringify(storage))
-    console.log("storage", storage)
+    favoritesList.push(newFavorite)
+
+    window.localStorage.setItem("savedRecipe", JSON.stringify(favoritesList))
+    console.log("savedfavorites", favoritesList);
 }
 
 function Save1() {
 
-    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var favoritesList = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var recipeName = meal2.title
+    var recipeLink = meal2.sourceUrl
+    localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
 
-    storage.push(meal2.sourceUrl)
+    var newFavorite = {mealTitle: recipeName, mealURL: recipeLink}
 
-    localStorage.setItem("savedRecipe", JSON.stringify(storage))
-    console.log("storage", storage)
+    favoritesList.push(newFavorite)
+
+    window.localStorage.setItem("savedRecipe", JSON.stringify(favoritesList))
+    console.log("savedfavorites", favoritesList);
 }
 
 function Save2() {
 
-    storage = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var favoritesList = JSON.parse(localStorage.getItem("savedRecipe")) || []
+    var recipeName = meal3.title
+    var recipeLink = meal3.sourceUrl
+    localStorage.setItem(("Meal Title", recipeName), ("Meal URL", recipeLink));
 
-    storage.push(meal3.sourceUrl)
+    var newFavorite = {mealTitle: recipeName, mealURL: recipeLink}
 
-    localStorage.setItem("savedRecipe", JSON.stringify(storage))
-    console.log("storage", storage)
+    favoritesList.push(newFavorite)
+
+    window.localStorage.setItem("savedRecipe", JSON.stringify(favoritesList))
+    console.log("savedfavorites", favoritesList);
 }
 
 console.log("storage", JSON.parse(localStorage.getItem("savedRecipe")))
