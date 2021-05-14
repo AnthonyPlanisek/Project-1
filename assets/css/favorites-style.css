@@ -15,7 +15,7 @@ body {
     background-size: cover;
 }
 
-h2, h3 {
+h3 {
     text-decoration: underline;
     text-align: center;
     white-space:nowrap;
