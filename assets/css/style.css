@@ -1,13 +1,13 @@
 * {
     --darkgrey: rgb(68, 68, 68);
-    --main:#77b55a;
+    --main:#1565c0;
     --white: rgb(255, 255, 255);
     /* google font added can and will edit later */
     font-family: 'Lato', serif;
 }
 
 body {
-    background: var(--main);
+    background:var(--main)
 }
 h1 {
     font-weight: 700;
@@ -25,7 +25,7 @@ h1 {
 .box {
     background-image: url("https://th.bing.com/th/id/Rc9ce858f2d52a8565b50a5754a2079ba?rik=jVieKvRtiUhX%2bw&riu=http%3a%2f%2fimage.made-in-china.com%2f43f34j00ENetmfoKbGbL%2fPorcelain-Floor-Tiles-Fossil-Wood-Light-Grey-.jpg&ehk=XegOLPijUlkMokW0YmnJzGFh6y1osbLeDroJhvSyq5M%3d&risl=&pid=ImgRaw");
     /* background-color: rgb(216, 214, 214); */
-    padding: 20px;
+    /*padding: 20px;*/
 }
 .servings {
     font-weight: 700;
@@ -42,23 +42,24 @@ h1 {
     color: var(--darkgrey);
 }
 .special {
+    display: flex;
     width:750px;
     background-color: var(--main);
     font-weight: 700;
     font-size: 20px;
-    color: var(--darkgrey);
+    color: rgb(207, 205, 205);
 }
 .new {
     background-color: var(--white);
 }
 .instructions {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--darkgrey);
 }
 .ingredientslist {
     background-color: var(--white);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
 }
 .image {
@@ -84,28 +85,30 @@ h1 {
 
 .daybutton {
     background-color: gray;
-    margin-top: 25px;
-    display: flex;
-}
-.newday {
-    display: flex;
-    float: left;
+    font-size: 16px;
     font-weight: 700;
-    font-size: 30px;
-    margin-right: 200px;
-    margin-bottom: 30px;
-    color: var(--darkgrey)
+}
+.center {
+    justify-content: center;
 }
 .savebutton {
     display:flex;
     float: right;
     background-color: gray;
+    font-weight: 700;
+    font-size: 16px;
 }
 .currentday {
     font-size: 50px;
 }
 .recipes {
     padding-top: 20px;
+}
+.daybox {
+    padding: 10px;
+}
+.icon {
+    font-size: 25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -115,14 +118,16 @@ h1 {
     }
     .daybutton {
         margin:5px;
+        padding: 10px;
     }
     .nav-wrapper {
-        padding-bottom: 30px;
-        
+        margin-bottom: 20px;
+        padding-bottom: 40px;
+        height: 40px;
     }
-    .newday {
-        font-size: 22px;
-        margin: 0px;
+    .daybox {
+        background-image: url("https://th.bing.com/th/id/Rc9ce858f2d52a8565b50a5754a2079ba?rik=jVieKvRtiUhX%2bw&riu=http%3a%2f%2fimage.made-in-china.com%2f43f34j00ENetmfoKbGbL%2fPorcelain-Floor-Tiles-Fossil-Wood-Light-Grey-.jpg&ehk=XegOLPijUlkMokW0YmnJzGFh6y1osbLeDroJhvSyq5M%3d&risl=&pid=ImgRaw");
+        padding: 20px;
     }
     .title {
         width: 350px;

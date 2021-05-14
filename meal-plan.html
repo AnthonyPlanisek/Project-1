@@ -7,6 +7,7 @@
     <title>Daily Meal Plan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- google fonts added. can/will edit later -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -14,25 +15,8 @@
 </head>
 
 <body>
-
-  <nav>
-    <div class="nav-wrapper">
-      <div class="newday">Plan ahead for your week!</div>
-      <ul class="right days">
-        <li><a id="btn1" class="waves-effect waves-light btn daybutton">Day 1</a></li>
-        <li><a id="btn2" class="waves-effect waves-light btn daybutton">Day 2</a></li>
-        <li><a id="btn3" class="waves-effect waves-light btn daybutton">Day 3</a></li>
-        <li><a id="btn4" class="waves-effect waves-light btn daybutton">Day 4</a></li>
-        <li><a id="btn5" class="waves-effect waves-light btn daybutton">Day 5</a></li>
-        <li><a id="btn6" class="waves-effect waves-light btn daybutton">Day 6</a></li>
-        <li><a id="btn7" class="waves-effect waves-light btn daybutton">Day 7</a></li>
-        <li><a id="savedbtn" class="waves-effect waves-light btn daybutton" onclick="location.href='favorites-list.html'">Saved Recipes</a></li>
-      </ul>
-    </div>
-  </nav>
-
   
-  
+
     <div class="card horizontal">
       <div class="card-stacked">
         <div class="card-content">
@@ -46,8 +30,20 @@
   <div>
     <h1 id="currentDay" class="currentday">Current Day</h1>
   </div>
-    
-
+</div>
+<div class="daybox">
+<nav class="nav-wrapper">
+  <ul class="center">
+    <li><a id="btn1" class="waves-effect waves-light btn daybutton">Day 1</a></li>
+    <li><a id="btn2" class="waves-effect waves-light btn daybutton">Day 2</a></li>
+    <li><a id="btn3" class="waves-effect waves-light btn daybutton">Day 3</a></li>
+    <li><a id="btn4" class="waves-effect waves-light btn daybutton">Day 4</a></li>
+    <li><a id="btn5" class="waves-effect waves-light btn daybutton">Day 5</a></li>
+    <li><a id="btn6" class="waves-effect waves-light btn daybutton">Day 6</a></li>
+    <li><a id="btn7" class="waves-effect waves-light btn daybutton">Day 7</a></li>
+    <li><a id="savedbtn" class="waves-effect waves-light btn daybutton" onclick="location.href='favorites-list.html'">Saved Recipes</a></li>
+  </ul>
+</nav>
 </div>
     <div class="recipes">
       <div class="media-object box box1">
@@ -63,7 +59,7 @@
           <div>
             <ul class="collapsible special">
               <li>
-                <div class="collapsible-header special"><i class="material-icons">arrow_downward</i>Ingredients</div>
+                <div class="collapsible-header special"><i class="material-icons icon">expand_more</i>Ingredients</div>
                 <div class="collapsible-body new" id="ingredients1"></div>
                 <div class="collapsible-body ingredientslist" id="ingredientslist1"></div>
               </li>
@@ -85,7 +81,7 @@
           <div>
           <ul class="collapsible special">
             <li>
-              <div class="collapsible-header special"><i class="material-icons"></i>Ingredients</div>
+              <div class="collapsible-header special"><i class="material-icons icon">expand_more</i>Ingredients</div>
               <div class="collapsible-body new" id="ingredients2"></div>
               <div class="collapsible-body ingredientslist" id="ingredientslist2"></div>
             </li>
@@ -109,7 +105,7 @@
           <div>
           <ul class="collapsible special">
             <li>
-              <div class="collapsible-header special"><i class="material-icons"></i>Ingredients</div>
+              <div class="collapsible-header special"><i class="material-icons icon">expand_more</i>Ingredients</div>
               <div class="collapsible-body new" id="ingredients3"></div>
               <div class="collapsible-body ingredientslist" id="ingredientslist3"></div>
             </li>

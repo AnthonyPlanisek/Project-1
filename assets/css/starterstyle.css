@@ -23,6 +23,7 @@ body {
     background-color: var(--white);
     width: 300px;
     border: 15px solid var(--main);
+    ;
     padding: 50px;
     position: fixed;
     top: 55%;
