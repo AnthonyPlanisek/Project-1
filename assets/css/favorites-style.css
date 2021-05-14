@@ -1,10 +1,11 @@
 * {
     --darkgrey: rgb(68, 68, 68);
-    --main:#77b55a;
+    --main:#1565c0;
+    --shadow: #311b92;
     --white: rgb(255, 255, 255);
     /* google font added can and will edit later */
     font-family: 'Lato', serif;
-}
+} 
 
 body {
     font-size: 27px;
@@ -25,9 +26,9 @@ h3 {
 
 .container {
     opacity: 0.9;
-    background-color: white;
+    background-color: var(--white);
     width: 480px;
-    border: 15px solid #77b55a;
+    border: 15px solid var(--main);
     padding: 50px;
 }
 
@@ -36,18 +37,18 @@ h3 {
 }
 
 .button {
-    box-shadow: 0px 10px 14px -7px #3e7327;
-	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-	background-color:#77b55a;
+    box-shadow: 0px 10px 14px -7px var(--shadow);
+	background:linear-gradient(to bottom, var(--main) 5%, var(--main) 100%);
+	background-color: var(--main);
 	border-radius:4px;
-	border:1px solid #4b8f29;
+	border:1px solid #1e88e5;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color: var(--white);
 	font-family:Arial;
-	font-size:13px;
+	font-size:17px;
 	font-weight:bold;
 	padding:10px 25px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #5b8a3c;
+	text-shadow:0px 1px 0px var(--shadow);
 }
