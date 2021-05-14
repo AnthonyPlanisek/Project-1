@@ -20,10 +20,6 @@ body {
     width: 480px;
     border: 15px solid #77b55a;
     padding: 50px;
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .favorites {
