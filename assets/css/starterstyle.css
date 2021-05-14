@@ -1,9 +1,11 @@
 body {
     font-family: 'Lato', serif;
     font-size: 27px;
-    background: url("food2.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
+    background: url(food2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
         
 }
 
