@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Meal Plan</title>
+    <title>Inspired Meals 4 You</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- google fonts added. can/will edit later -->
@@ -23,9 +23,13 @@
 
   <div class="container">
 
+    <div class="row">
+      <button class="button" onclick="deleteItems() "> Clear Favorites </button>
+    </div>
+
     <div class="row favorites with-header">
 
-        <h3 class="favorites-header">Favorite Meals</h3>
+        <h3 class="favorites-header">Favorite Inspired Meals</h3>
         <div id="past-recipes" class="favorite-recipes">
           <a id="past-urls" class="favorite-urls"></a>
         </div>

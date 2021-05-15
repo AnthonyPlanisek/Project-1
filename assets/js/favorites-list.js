@@ -16,3 +16,8 @@ function displayLocalStorage() {
 
 displayLocalStorage()
 
+function deleteItems() {
+    // Clear local storage items.
+    localStorage.clear();
+    location.reload();
+}

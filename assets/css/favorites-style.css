@@ -19,7 +19,7 @@ body {
 h3 {
     text-decoration: underline;
     text-align: center;
-    white-space:nowrap;
+    /* white-space:nowrap;*/
     text-overflow:ellipsis;
 }
 
