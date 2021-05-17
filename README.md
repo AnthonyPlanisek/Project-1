@@ -17,7 +17,7 @@ This API provides searches that give lots of different information based on the 
 
 The homepage of our site provides three places for the user to enter their: "Daily Calorie Goal", "Foods to Exclude" and a pull down menu "Select a Meal Preference" with all the different types of diets the spoonacular API is able to filter for.
 
-![HomePage](assets\ReadMe images\WeeklyHomePage.png)
+![HomePage](https://github.com/AnthonyPlanisek/Project-1/blob/main/assets/ReadMe%20images/WeeklyHomePage.png)
 
 This information is then attached to the meal-plan.html through location.assign, and when the "Create Meals" button is clicked the user is directed to their personal weekly meal plan page, which is coded on the meal-plan.html.
 
@@ -34,7 +34,7 @@ In order to get all the information we needed for 21 meals we had to run two API
     - All of this information is saved in local storage under "savedData".
 
 Our main webpage, coded on the meal-plan.html, provides alot of information and is basically 7 pages in one.
-![meal-plan-page](assets\ReadMe images\MealPlanPage.png)
+![meal-plan-page](https://github.com/AnthonyPlanisek/Project-1/blob/main/assets/ReadMe%20images/MealPlanPage.png)
 
 1. **Top of Website**
 At the top of the page on the far left shows the current day's date and on the far right shows our second API (not part of spoonacular) called "Quotes Inspirational Quotes Motivational Quotes" API Documentation also found under rapidAPI.com.
@@ -54,10 +54,10 @@ Our site is setup to show 3 meals and the user can click between the day buttons
 
 ## Favorites Page
 To visit the saved recipes page, the user can click the saved recipes button at the end of the nav bar and they are taken to the website's third page attached to the favorites-list.html. 
-![Favorites-page](assets\ReadMe images\FavoritesPage.png)
+![Favorites-page](https://github.com/AnthonyPlanisek/Project-1/blob/main/assets/ReadMe%20images/FavoritesPage.png)
 - This page displays all of the favorite recipes stored in local storage. 
 - It displays the name of each recipe and a button that opens a new tab with the original webpage for that recipe, that the spoonacular API was able to gather it from. 
-- At the bottom of the list is a return button which takes the user back to the meal-plan page.
+- At the top of the page there is a button to clear your favorites, which only clears the "savedRecipe" from local storage. And at the bottom of the list is a return button which takes the user back to the meal-plan page.
 
 
 
