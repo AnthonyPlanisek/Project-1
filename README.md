@@ -59,7 +59,8 @@ To visit the saved recipes page, the user can click the saved recipes button at 
 - It displays the name of each recipe and a button that opens a new tab with the original webpage for that recipe, that the spoonacular API was able to gather it from. 
 - At the top of the page there is a button to clear your favorites, which only clears the "savedRecipe" from local storage. And at the bottom of the list is a return button which takes the user back to the meal-plan page.
 
-
+---
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/#).
 
 
 
